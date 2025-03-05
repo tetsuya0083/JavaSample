@@ -1,1 +1,1 @@
-### Java Sample
+Java Sample
