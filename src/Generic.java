@@ -12,6 +12,5 @@ public class Generic {
        p2.info.append("World");
 
        System.out.println(p1.info+p2.info);
-
     }
 }
