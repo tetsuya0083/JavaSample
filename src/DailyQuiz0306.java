@@ -33,6 +33,7 @@ public class DailyQuiz0306 {
         // 코드 작성하는 부분
         // ...
         int max = 0;
+        int avg = 0;
         int sum = 0;
         for (int num : array) {
             sum += num;
@@ -40,7 +41,7 @@ public class DailyQuiz0306 {
                 max = num;
             }
         }
-        double avg = (double)(sum / array.length);
+        avg = sum / array.length;
         // 결과 출력 (최대값: max, 평균: avg)
         System.out.println(max);
         System.out.println(avg);
