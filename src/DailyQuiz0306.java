@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+import static java.lang.Integer.parseInt;
+
 public class DailyQuiz0306 {
     public static void main(String[] args) {
         //-----------------------------------------------------------------------
@@ -56,6 +61,63 @@ public class DailyQuiz0306 {
                 System.out.println(i);
             }
         }while(i <= 20);
+
+        // 4. 프로그래머스 문제
+        //-----------------------------------------------------------------------
+        // 짝수의 합: 정수 n이 주어질 때, n이하의 짝수를 모두 더한 값
+        class Solution1 {
+            public int solution1(int n) {
+                int answer = 0;
+                for(int i = 1; i <= n; i++){
+                    if(i%2!=0) continue;
+                    answer += i;
+                }
+                return answer;
+            }
+        }
+        Solution1 sol =  new Solution1();
+        int sumEvenNum = sol.solution1(10);
+        System.out.println(sumEvenNum);
+
+        // 배열의 평균:
+        // 정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소의 평균값을 return하도록
+        class Solution2 {
+            public double solution2(int[] numbers) {
+                double answer = 0;
+                for (int num : numbers){
+                    answer += (double) num;
+                }
+                answer = answer / numbers.length;
+                return answer;
+                //return Arrays.stream(numbers).average().orElse(0);
+            }
+        }
+        Solution2 sol2 = new Solution2();
+        int[] sol2ArrNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        double sol2Answer = sol2.solution2(sol2ArrNum);
+        System.out.println(sol2Answer);
+
+        // 양꼬치
+        // 머쓱이네 양꼬치 가게는 10인분을 먹으면 음료수 하나를 서비스로 줍니다.
+        // 양꼬치는 1인분에 12,000원, 음료수는 2,000원입니다.
+        // 정수 n과 k가 매개변수로 주어졌을 때,
+        // 양꼬치 n인분과 음료수 k개를 먹었다면 총얼마를 지불해야 하는지
+        // return 하도록 solution 함수를 완성해보세요.
+        class Solution3 {
+            public int solution3(int n, int k) {
+                int answer = 0;
+                int lamb = 12000;//n
+                int beverage = 2000;//k
+                int freeBeverage = n/10;
+                answer = (lamb * n) + (beverage * (k - freeBeverage));
+                return answer;
+            }
+        }
+        Solution3 sol3 = new Solution3();
+        int sol3Lamb = 23;
+        int sol3Beverage = 13;
+        double sol3Answer = sol3.solution3(sol3Lamb, sol3Beverage);
+        System.out.println(sol3Answer);
 
     }
 }
