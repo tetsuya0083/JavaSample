@@ -1,24 +1,24 @@
-class Animal{
+class Animals{
     private String species;
     private String name;
     private int count;
 
-    Animal(){
+    Animals(){
         this.species = "default";
         this.name = "default";
         this.count = 0;
     }
-    Animal(String species, String name){
+    Animals(String species, String name){
         this.species = species;
         this.name = name;
         this.count = 0;
     }
-    Animal(String name){
+    Animals(String name){
         this.species = "default";
         this.name = name;
         this.count = 0;
     }
-    Animal(int count){
+    Animals(int count){
         this.species = "default";
         this.name = "default";
         this.count = count;
@@ -48,14 +48,14 @@ class Animal{
 public class Zoo {
     public static void main(String[] args) {
 
-        Animal elephant = new Animal("Mammals", "elephant");
+        Animals elephant = new Animals("Mammals", "elephant");
         elephant.setCount(2);
 
-        Animal monkeys = new Animal("monkey");
+        Animals monkeys = new Animals("monkey");
         monkeys.setSpecies("Primates");
         monkeys.setCount(11);
 
-        Animal dog = new Animal(7);
+        Animals dog = new Animals(7);
         dog.setSpecies("Mammals");
         dog.setName("dog");
 
