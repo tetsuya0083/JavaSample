@@ -14,10 +14,10 @@ class Dog extends Animal{
     }
 }
 
-class Person{
+class Personinherit{
     private String name;
     private String ssn;
-    public Person(String name, String ssn){
+    public Personinherit(String name, String ssn){
         this.name = name;
         this.ssn = ssn;
     }
@@ -38,7 +38,7 @@ class Person{
     }
 }
 
-class Student extends Person{
+class Student extends Personinherit{
     int studentNo;
 
     public Student(String name, String ssn, int studentNo){
