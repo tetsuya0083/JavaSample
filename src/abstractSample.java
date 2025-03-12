@@ -1,6 +1,6 @@
 abstract class Aabstract{
-    // class A가 abstract method인 b()를 가지고 있기 때문에
-    // abstract class A가 된 것이다.
+    // class Aabstract가 abstract method인 b()를 가지고 있기 때문에
+    // abstract class Aabstract가 된 것이다.
 
     // 본체{System.out.println("hello")}가 있는 메소드는 abstract 키워드를 가질 수 없다.
     // public abstract int c(){System.out.println("hello")} -> error다. 이렇게 안된다는 것임.
