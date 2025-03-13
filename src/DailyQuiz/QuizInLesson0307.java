@@ -1,3 +1,5 @@
+package DailyQuiz;
+
 import java.util.Map;
 import java.util.LinkedHashMap;
 

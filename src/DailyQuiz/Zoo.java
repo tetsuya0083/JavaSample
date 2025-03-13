@@ -1,3 +1,5 @@
+package DailyQuiz;
+
 class Animals{
     private String species;
     private String name;

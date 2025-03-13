@@ -1,3 +1,5 @@
+package DailyQuiz;
+
 import java.util.Arrays;
 
 //정수 리스트 num_list가 주어질 때,
