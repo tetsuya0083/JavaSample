@@ -1,7 +1,7 @@
 package WeeklyQuizInterface;
 
 public class Cart implements Promotion {
-    private Product[] products;
+    final private Product[] products;
 
     Cart(Product[] products){
         this.products = products;
@@ -9,7 +9,7 @@ public class Cart implements Promotion {
 
     //배송비 계산
     public int calculateDeliveryCharge(){
-        int deliveryCharge = 0;
+        int deliveryCharge;
         int totalWeight = 0;
 
         for (Product product : products){
@@ -40,9 +40,7 @@ public class Cart implements Promotion {
         for (Product product : products){
             totalPrice += product.getPrice();
         }
-        if (totalPrice < 30_000){
-            discount = 0;
-        } else if(totalPrice <= 100_000){
+        if(totalPrice <= 100_000){
             discount = 1_000;
         } else {
             discount = deliveryCharge;
