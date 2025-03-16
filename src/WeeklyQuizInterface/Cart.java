@@ -34,7 +34,7 @@ public class Cart implements Promotion {
     @Override
     public int getDiscountAmount(int deliveryCharge){
         int totalPrice = 0;
-        int discount = 0;
+        int discount;
 
         //상품 가격 총합 구간에 따른 배송비 할인 금액
         for (Product product : products){

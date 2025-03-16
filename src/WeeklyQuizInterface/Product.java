@@ -1,9 +1,9 @@
 package WeeklyQuizInterface;
 
 public class Product {
-    private String name;
-    private int weight; //무게
-    private int price; //가격
+    final private String name;
+    final private int weight; //무게
+    final private int price; //가격
     private int discountAmount; //할인금액
 
     Product(String name, int price, int weight){
