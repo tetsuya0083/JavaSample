@@ -38,7 +38,7 @@ public class Cart implements Promotion {
 
         //상품 가격 총합 구간에 따른 배송비 할인 금액
         for (Product product : products){
-            totalPrice += product.getPrice();
+            totalPrice += ( product.getPrice() - product.getDiscountAmount() );
         }
         if(totalPrice <= 100_000){
             discount = 1_000;

@@ -21,6 +21,7 @@ public class Product {
 
     public int getPrice(){return price;}
     public int getWeight(){return weight;}
+    public int getDiscountAmount(){return discountAmount;}
 
 }
 
