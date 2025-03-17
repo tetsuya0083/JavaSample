@@ -1,6 +1,6 @@
 package WeeklyQuizInterface;
 
-public class Product {
+public class Product implements Promotion {
     final private String name;
     final private int weight; //무게
     final private int price; //가격
@@ -21,8 +21,12 @@ public class Product {
 
     public int getPrice(){return price;}
     public int getWeight(){return weight;}
-    public int getDiscountAmount(){return discountAmount;}
 
+    //Promotion 이벤트
+    @Override
+    public int getDiscountAmount(){
+        return discountAmount;
+    }
 }
 
 class Grocery extends Product{
