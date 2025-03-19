@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.ToIntBiFunction;
@@ -42,6 +43,32 @@ class MathUtils {
         return x * y;
     }
 }
+
+class Member {
+    private String name;
+    private String id;
+
+    public Member() {
+        System.out.println("Member() default 생성자 호출");
+    }
+
+    public Member(String id) {
+        System.out.println("Member(id) 생성자 호출");
+        this.id = id;
+    }
+
+    public Member(String name, String id) {
+        System.out.println("Member(id, name) 생성자 호출");
+        this.name = name;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+}
+
+
 
 public class LambdaSample {
 
@@ -112,7 +139,9 @@ public class LambdaSample {
         System.out.println("Sorted using Anonymous Class: " + names);
         // 람다식 방식
         names.sort(
-                (str1, str2) -> { return str1.compareTo(str2); }
+                (str1, str2) -> {
+                    return str1.compareTo(str2);
+                }
         );
         System.out.println("Sorted using Lambda: " + names);
 
@@ -147,8 +176,14 @@ public class LambdaSample {
                 (id, name) -> { new MathUtils(id, name); return 0;};
         //int constructorRef = MathUtils::new;  MathUtils가 functional interface라면 같은 의미임.
         //class::new;
-        int result = lamdaConstructor.applyAsInt(11111, "name");
-        System.out.println(result);
+//        int result = lamdaConstructor.applyAsInt(11111, "name");
+//        System.out.println(result);
+
+        Function<String, Member> function1 = Member::new;
+        Member member1 = function1.apply("angel");
+
+        BiFunction<String, String, Member> function2 = Member::new;
+        //Member member2 = function2.apply("angel", "devil");
 
     }
 }
