@@ -1,6 +1,23 @@
 import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class CollectionSample {
+
+    static void iteratorUsingForEach(HashMap map){
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        for (Map.Entry<String, Integer> entry : entries){
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+    }
+
+    static void iteratorUsingIterator(HashMap map){
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        Iterator<Map.Entry<String, Integer>> i = entries.iterator();
+        while (i.hasNext()){
+            System.out.println(i.next().getKey() +" : " + i.next().getValue());
+        }
+    }
+
     public static void main(String[] args) {
 
         //ArrayList
@@ -49,7 +66,7 @@ public class CollectionSample {
         hashSetA.add(2);
         hashSetA.add(3);
 
-        Iterator hi = (Iterator) hashSetA.iterator();
+        Iterator hi = hashSetA.iterator();
         while(hi.hasNext()){
             System.out.println(hi.next());
         }
@@ -74,6 +91,77 @@ public class CollectionSample {
         while(hi2.hasNext()){
             System.out.println(hi2.next());
         }
+
+        //Map
+        HashMap<String, Integer> hm = new HashMap<>();
+        hm.put("one", 1);
+        hm.put("two", 2);
+        hm.put("three", 3);
+        hm.put("four", 4);
+        System.out.println("HashMap: " + hm.get("one"));
+        System.out.println("HashMap: " + hm.get("two"));
+        System.out.println("HashMap: " + hm.get("three"));
+        System.out.println("HashMap size: " + hm.size());
+
+        Set<String> keySet = hm.keySet();//순서를 보장하지 않는다!!!
+        Iterator<String> itr = keySet.iterator();
+        while(itr.hasNext()){
+            String key = itr.next();
+            Integer value = hm.get(key);
+            System.out.println("HashMap used keySet:" + key + value);
+        }
+
+        iteratorUsingForEach(hm);
+        iteratorUsingIterator(hm);
+
+        //Stack
+        Stack<Integer> stack = new Stack<>();
+        stack.push(11);
+        stack.push(22);
+        stack.push(33);
+
+        System.out.println("Top element: " + stack.peek());//the lastest push element, 33
+        System.out.println("pop element: " + stack.pop());//pop element, 33
+        System.out.println("Is stack empty? " + stack.isEmpty());// false
+        System.out.println("stack size: " + stack.size());//2
+
+        String strStack = "Hello";
+        Stack<Character> charStack = new Stack<>();
+        for (char c : strStack.toCharArray()){
+            charStack.push(c);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while(charStack.isEmpty() == false){
+            sb.append(charStack.pop());
+        }
+        System.out.println(sb);//olleH
+
+        //Queue
+        //Queue - LinkedList
+        Queue<String> queueLL = new LinkedList<>();
+
+        queueLL.offer("Apple");
+        queueLL.offer("Banana");
+        queueLL.offer("Cherry");
+
+        System.out.println("Front element: " + queueLL.peek()); // the oldest element, Apple
+        System.out.println("Removed: " + queueLL.poll()); // poll oldest element, Apple
+        System.out.println("Queue size: " + queueLL.size()); //2
+        System.out.println(queueLL);//[Banana, Cherry]
+
+        //Queue - ArrayDeque
+        Queue<Integer> queueAD = new ArrayDeque<>();
+
+        queueAD.offer(0);
+        queueAD.offer(1);
+        queueAD.offer(2);
+
+        System.out.println("Front element: " + queueAD.peek()); // 0
+        System.out.println("Removed: " + queueAD.poll()); // the oldest element, 0
+        System.out.println(queueAD);// [1, 2]
+
+
 
 
 
