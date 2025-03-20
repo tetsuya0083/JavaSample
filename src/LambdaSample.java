@@ -1,8 +1,5 @@
 import java.util.*;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.IntFunction;
-import java.util.function.ToIntBiFunction;
+import java.util.function.*;
 
 
 @FunctionalInterface
@@ -184,6 +181,44 @@ public class LambdaSample {
 
         BiFunction<String, String, Member> function2 = Member::new;
         //Member member2 = function2.apply("angel", "devil");
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Runnable");
+            }
+        };
+
+        Supplier s = new Supplier() {
+            @Override
+            public Object get() {
+                System.out.println("Supplier");
+                return null;
+            }
+        };
+
+        Consumer c = new Consumer() {
+            @Override
+            public void accept(Object o) {
+                System.out.println("Consmer");
+            }
+        };
+
+        Function f = new Function() {
+            @Override
+            public Object apply(Object o) {
+                System.out.println("Function");
+                return null;
+            }
+        };
+
+        Predicate p = new Predicate() {
+            @Override
+            public boolean test(Object o) {
+                System.out.println("Predicate");
+                return false;
+            }
+        };
 
     }
 }
