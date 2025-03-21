@@ -15,7 +15,7 @@ public class OptionalObjectSample {
         String name = "이름";
         String nameNull = null;
         Optional<String> optionalName = Optional.of(name);//value must not be null.
-        //Optional<String> optionalName = Optional.of(nameNull);//name2 is null. NPE
+        //Optional<String> optionalNameNull = Optional.of(nameNull);//name2 is null. NPE
         System.out.println(optionalName.isPresent());//true
         System.out.println(optionalName.get()); //이름
 
