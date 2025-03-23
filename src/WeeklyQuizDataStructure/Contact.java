@@ -30,16 +30,16 @@ class BusinessContact extends Contact implements AddContact{
 
         while(true){
             System.out.println("이름을 입력하세요:");
-            super.setName(Main.getScanner().nextLine());
+            super.setName(Main.scanner.nextLine());
             System.out.println("전화번호를 입력하세요:");
-            super.setPhoneNumber(Main.getScanner().nextLine());
+            super.setPhoneNumber(Main.scanner.nextLine());
             System.out.println("회사명을 입력하세요:");
-            setCompany(Main.getScanner().nextLine());
+            setCompany(Main.scanner.nextLine());
 
             System.out.println("\"이름: "+getName()+", 전화번호: "+getPhoneNumber()
                     +", 회사명: "+getCompany()+"\" 맞습니까?(y/n)");
 
-            if (Objects.equals(Main.getScanner().nextLine(), "y"))
+            if (Objects.equals(Main.scanner.nextLine(), "y"))
                 break;
         }
 
@@ -61,16 +61,16 @@ class PersonalContact extends Contact implements AddContact{
 
         while(true){
             System.out.println("이름을 입력하세요:");
-            super.setName(Main.getScanner().nextLine());
+            super.setName(Main.scanner.nextLine());
             System.out.println("전화번호를 입력하세요:");
-            super.setPhoneNumber(Main.getScanner().nextLine());
+            super.setPhoneNumber(Main.scanner.nextLine());
             System.out.println("관계를 입력하세요:");
-            setRelationship(Main.getScanner().nextLine());
+            setRelationship(Main.scanner.nextLine());
 
             System.out.println("\"이름: "+getName()+", 전화번호: "+getPhoneNumber()
                     +", 관계: "+getRelationship()+"\" 맞습니까?(y/n)");
 
-            if (Objects.equals(Main.getScanner().nextLine(), "y"))
+            if (Objects.equals(Main.scanner.nextLine(), "y"))
                 break;
         }
 

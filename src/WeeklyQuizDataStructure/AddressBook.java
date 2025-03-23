@@ -38,7 +38,7 @@ public class AddressBook {
         }
 
         System.out.println("검색할 이름을 입력하세요.");
-        String name = Main.getScanner().nextLine();
+        String name = Main.scanner.nextLine();
 
         boolean found = false;
         for (Contact contact : contacts) {

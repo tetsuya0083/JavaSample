@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     private static final AddressBook book = new AddressBook();
-    private static final Scanner scanner = new Scanner(System.in);
-
-    public static Scanner getScanner() {return scanner;}
+    public static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
