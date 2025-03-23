@@ -40,11 +40,11 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("연락처 출력으로 이동합니다.");
-                    book.DisplayContacts();
+                    book.displayContacts();
                     break;
                 case 4:
                     System.out.println("연락처 검색으로 이동합니다.");
-                    book.SearchContact();
+                    book.searchContact();
                     break;
                 case 5:
                     System.out.println("프로그램을 종료합니다.");
